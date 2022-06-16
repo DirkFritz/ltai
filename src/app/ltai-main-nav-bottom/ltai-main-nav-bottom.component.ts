@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AppService } from '../app.service';
 @Component({
   selector: 'app-ltai-main-nav-bottom',
   templateUrl: './ltai-main-nav-bottom.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LtaiMainNavBottomComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService : AppService) { }
 
   public navbarCollapsed = true;
 
