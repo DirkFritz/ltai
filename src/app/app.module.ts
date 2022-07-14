@@ -11,14 +11,10 @@ import { LtaiMainNavBottomComponent } from './ltai-main-nav-bottom/ltai-main-nav
   declarations: [
     AppComponent,
     LtaiMainNavComponent,
-    LtaiMainNavBottomComponent
+    LtaiMainNavBottomComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

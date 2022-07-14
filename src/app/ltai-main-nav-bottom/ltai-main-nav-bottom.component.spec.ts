@@ -8,9 +8,8 @@ describe('LtaiMainNavBottomComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LtaiMainNavBottomComponent ]
-    })
-    .compileComponents();
+      declarations: [LtaiMainNavBottomComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
