@@ -27,10 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/jquery/dist/jquery.js", "src/assets/scripts/plotly.min.js", "node_modules/bootstrap/dist/js/bootstrap.js"]
           },
           "configurations": {
             "production": {
@@ -103,5 +103,7 @@
       }
     }
   },
-  "defaultProject": "ltai"
+  "cli": {
+    "analytics": false
+  }
 }
