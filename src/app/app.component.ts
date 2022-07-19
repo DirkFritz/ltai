@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { AppService } from './app.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { NONE_TYPE } from '@angular/compiler';
+
+declare var Plotly: any;
 
 @Component({
   selector: 'app-root',
@@ -14,10 +16,20 @@ export class AppComponent implements OnInit {
 
   dashboardUrl: SafeHtml = NONE_TYPE;
 
-  constructor(
-    private sanitizer: DomSanitizer,
-    private appService: AppService
-  ) {}
+  @ViewChild('Graph', { static: true })
+  private Graph!: ElementRef;
+  public data: any = {
+    x: [1, 2, 3],
+    y: [2, 6, 3],
+    name: 'Graph Name',
+    type: 'scattergl',
+    mode: 'line',
+    marker: { color: 'red' },
+  };
+
+  constructor(private sanitizer: DomSanitizer, private appService: AppService) {
+    this.Graph = Plotly.newPlot(this.Graph.nativeElement, [this.data]);
+  }
 
   ngOnInit(): void {
     this.dashboardUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
